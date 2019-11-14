@@ -1,0 +1,179 @@
+ body{
+     margin: 0;
+ }
+ .block_parallax{            
+        .title-1{           
+            font-size: 16px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0;
+        }
+        .big-title{
+            font-weight: bold;
+            font-size: 50px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 5px;    
+            margin-bottom: 13px;    
+            margin-top: 13px;   
+        }
+        .collection{
+            display: inline-block;
+            color: #333;            
+            font-size: 12px;
+            width:220px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            border:solid 1px #333;
+            box-sizing:border-box;
+            letter-spacing: 3px;
+            &:hover{
+                background: #b59677;                
+                text-decoration: none;
+                border:solid 1px #b59677;
+            }
+        }
+        .title-2{
+            font-weight: bold;
+            font-size: 30px;            
+            text-transform: uppercase;
+            letter-spacing: 5px;            
+            margin-bottom: 0;
+            a{
+                color: #333;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            
+        }
+        .small-title{
+            font-size: 12px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: -2px;
+            letter-spacing: 3px;
+            a{
+                color: #333;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        .sale-off{
+            font-size: 22.68px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: block;
+        }
+        .sale-num{
+            font-weight: bold;
+            font-size: 63px;
+            color: #333;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            margin-top: -9px;
+        }
+        .product1,.product2{
+            position:relative;
+            overflow: hidden;
+            transition: 0.4s;           
+            .text{
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                white-space: nowrap;
+            }           
+            a{
+                color: #333;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        } 
+        .product2{
+            .title-2{
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        .product-link{
+            display: flex;
+            flex-wrap: wrap;            
+            .product1{
+                width: 50%;
+                overflow: hidden;
+                img{
+                    transition: 0.4s;
+                    width: 100%;
+                    max-width: 100%;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }                   
+                }
+            }
+        }   
+        .product-link1{
+            display: flex;
+            flex-wrap: wrap;            
+            .product2{
+                width: calc(100%/3);
+                overflow: hidden;
+                img{
+                    transition: 0.4s;
+                    width: 100%;
+                    max-width: 100%;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }  
+        .content-parallax{
+            background-size: cover;  
+            .bg-parallax{
+                background-size:cover;
+            }           
+            &.banner{                   
+                .bg-parallax{
+                    background-image:url(img/banner-1.jpg);
+                    padding-top:310px;
+                    padding-bottom:300px;
+                }
+            }
+            &.banner1{              
+                .bg-parallax{
+                    background-image:url(img/banner-2.jpg);
+                    padding-top:310px;
+                    padding-bottom:300px;
+                }
+            }
+            &.banner2{              
+                .bg-parallax{
+                    background-image:url(img/banner-3.jpg);
+                    padding-top:250px;
+                    padding-bottom:240px;
+                }
+            }
+        }
+        .bg-parallax{
+            background-attachment: fixed;
+            background-position: center center !important;
+            background-repeat: no-repeat;
+        }   
+        .max-inner{
+            text-align: center;         
+        }   
+    }
