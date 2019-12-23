@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+        font-family: Arial;
+    }
+
+   .tab {
+        overflow: hidden;
+        border: 0px solid #ccc;
+        background-color: #f1f1f1;
+        margin-bottom: 10px;
+    }
+
+    .tabcontent .content {
+        display: none
+    }
+
+    .tabcontent .content.actived {
+        display: block
+    }
+    </style>
+</head>
+
+<body>
+    <p>In this example, we use JavaScript to "click" on the tab1 button, to open the tab on page load.</p>
+    <div class="product_tab">
+        <div class="tabs">
+            <div class="tab product-new active">tab1</div>
+            <div class="tab product-sale">tab2</div>
+            <div class="tab product-random">tab3</div>
+        </div>
+        <div class="tabcontent">
+            <div class="content product-new actived">
+                <h3>tab1</h3>                
+                <div class="actions-toolbar">
+                    <a  href="javascript:void(0)" class="action next">Next</a>
+                </div>
+            </div>
+            <div class="content product-sale">
+                <h3>tab2</h3>
+                <div class="actions-toolbar">
+                    <a  href="javascript:void(0)" class="action back">Back</a>
+                    <a  href="javascript:void(0)" class="action next">Next</a>                    
+                </div>
+            </div>
+            <div class="content product-random">
+                <h3>tab3</h3>              
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $(".product_tab").each(function() {
+            var $tab = $(this).find('.tab');
+            var content = $(this).find('.tabcontent');
+            $tab.click(function(event) {
+                var $type = $(this).attr('class').replace('active',"").replace('tab',"").replace(" ","");
+                content.find('.content').removeClass('actived');
+                content.find('.' + $type).addClass('actived');
+                $(".product_tab .tab").removeClass("active");
+                $(this).addClass('active');
+            });
+        }); 
+        $('.tabcontent .next').click(
+            function(){  
+                var $type = $(this).parents('.content').attr('class').replace('actived',"").replace('content',"").replace(" ","");
+                $(this).parents('.content').removeClass('actived');          
+                $(this).parents('.content').next().addClass('actived');
+                $('.tabs .tab').removeClass('active');
+                $('.tabs').find('.' + $type).next().addClass('active');               
+            }
+        );   
+        $('.tabcontent .back').click(
+            function(){
+                $(this).parents('.content').removeClass('actived');          
+                $(this).parents('.content').prev().addClass('actived');
+                var $type = $(this).parents('.content').attr('class').replace('actived',"").replace('content',"").replace(" ","");
+                $('.tabs .tab').removeClass('active');
+                $('.tabs').find('.' + $type).prev().addClass('active');     
+            }
+        );     
+    });
+    </script>
+</body>
+
+</html>
