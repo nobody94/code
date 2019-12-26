@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        a{
+            text-decoration: none;
+            color:#333;
+        }
+        .reducer .action{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            text-align: center;
+            background: #333;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="reducer">
+        <input type="text" value="1" class="input-text">
+        <a href="javascript:void(0)" class="action minus">-</a>
+        <a href="javascript:void(0)" class="action plus">+</a>
+    </div>  
+    <div class="reducer">
+        <input type="text" value="1" class="input-text">
+        <a href="javascript:void(0)" class="action minus">-</a>
+        <a href="javascript:void(0)" class="action plus">+</a>
+    </div>  
+    <script>
+        $(document).ready(function(){
+            var inputText = $('.reducer').find('.input-text').val();
+           $(".reducer .minus").click(function(){
+                inputText = inputText - 1;
+           })
+        });
+    </script>
+</body>
+</html>
